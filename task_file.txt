@@ -1,0 +1,25 @@
+#!/bin/bash
+
+give learning
+give learning
+give learning
+give learning
+give learning
+give learning
+give learning
+give learning
+
+
+# Check if file argument is provided
+if [ -z "$1" ]; then
+  echo "Please provide a file name."
+  exit 1
+fi
+
+# File to modify
+file=$1
+
+# Replace 'learning' with 'welcome' from the 5th line onwards, only in lines containing 'give'
+sed -i '5,$ { /give/ s/learning/welcome/g }' "$file"
+
+echo "Replacement done!"
